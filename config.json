@@ -1,4 +1,4 @@
 {
-    "prefix":"!",
-    "token":""
+    "prefix":"Coloque seu Prefix aqui",
+    "token":"Coloque seu token aqui \\ Cuidado com exposição de tokens na internet"
 }
