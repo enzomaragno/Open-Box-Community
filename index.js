@@ -11,7 +11,12 @@ client.once('ready', async () => {
 
 
 
-
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
 
 })
 
@@ -65,6 +70,11 @@ client.on('ready', () => {
 
 
 
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
 
 
 
@@ -122,3 +132,9 @@ client.on('ready', () => {
             }
         }
     });
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+
