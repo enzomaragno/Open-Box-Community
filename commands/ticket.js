@@ -1,8 +1,12 @@
 const Discord = require("discord.js")
 
 module.exports = {
-    name: "t", // Coloque o nome do comando do arquivo
-    aliases: ["ticket"], // Coloque sinônimos aqui
+    name: "t", 
+    aliases: ["ticket"], 
+    //creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+
 
     run: async(client, message, args) => {
 
@@ -32,6 +36,11 @@ module.exports = {
         }
 
        
-        
+        //creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+//creditos para Maragnoo#9131
+
     }
 }
