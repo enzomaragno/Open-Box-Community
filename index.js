@@ -61,33 +61,14 @@ client.on('ready', () => {
 
     
 
-    //anti-crash
     
-    process.on('unhandledRejection', (reason, p) => {
-      console.log(' [ ANTICLASH ] | SCRIPT REJEITADO');
-      console.log(reason, p);
-    });
-                                                                        
-    process.on("uncaughtException", (err, origin) => {
-      console.log(' [ ANTICLASH] | CATCH ERROR');
-      console.log(err, origin);
-    }) 
-    
-    process.on('uncaughtExceptionMonitor', (err, origin) => {
-      console.log(' [ ANTICLASH ] | BLOQUEADO');
-      console.log(err, origin);
-    });
-    
-    process.on('multipleResolves', (type, promise, reason) => {
-      console.log(' [ ANTICLASH ] | VÁRIOS ERROS');
-      console.log(type, promise, reason);
-    });
 
 
 
 
 
-    //ticket sistem
+
+    //ticket sistemy
 
     client.on("interactionCreate", (interaction) => {
         if (interaction.isButton()) {
