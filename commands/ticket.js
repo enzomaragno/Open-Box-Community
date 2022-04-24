@@ -16,12 +16,12 @@ module.exports = {
             let embed = new Discord.MessageEmbed()
             .setColor("#2F3136")
             .setAuthor(`Atendimento`)
-            .setFooter({ text: message.guild.name, iconURL: message.guild.iconURL({ dynamic: true }) })
+            .setFooter(`Open BOX`)
             .setTimestamp(new Date())
             .setThumbnail("https://cdn.discordapp.com/icons/827725704711110659/8e77c3930447c91937669ff09411b389.png?size=2048")
             .addField(`Atenção!`, `<a:Seta:820394451167608922> Abra um ticket clicando no botão abaixo. \`🎫\`\n<:information:946890994375327815> Não abra um TICKET sem ter algo relevante. Abrir apenas por abrir irá gerar punições.`);
 
-            let botao = new Discord.MessageActionRow()
+            let abrir = new Discord.MessageActionRow()
             .addComponents(
                 new Discord.MessageButton()
                 .setCustomId("t")
@@ -30,7 +30,7 @@ module.exports = {
                 .setStyle("PRIMARY")
             );
 
-            message.channel.send({ embeds: [embed], components: [botao] }).then( () => {
+            message.channel.send({ embeds: [embed], components: [abrir] }).then( () => {
                 message.delete()
             });
         }
