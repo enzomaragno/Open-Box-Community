@@ -4,8 +4,12 @@ const config = require("./config.json");
 
 client.login(config.token); 
 
-client.once('ready', async () => {
+const data = new Date();
+data.setHours(data.getHours() - 3);
 
+client.once('ready', async () => {
+    
+    console.log(`Logado às ${data}`)
     console.log(` [LOGS] Logado com sucesso em ${client.user.tag} `)
     console.log(` [INFO] Direitos do BOT para Maranoo#9131` )
 
@@ -40,12 +44,7 @@ client.on('messageCreate', message => {
     console.error('Erro:' + err);
   }
 });
-//const commandFile = require(`./commands/${command}.js`)
-//commandFile.run(client, message, args);
-//} catch (err) {
-//console.error('Erro:' + err);
-//}
-//});
+
 
 
 
@@ -58,9 +57,9 @@ const arrayOfStatus = [
 ]
 
 client.on('ready', () => {
-    console.log(`Activity Status ON`)
+    console.log(`[INFO] Activity status working. Setting in ${client.guilds.cache.get}`)
     setInterval(() => {
-        client.user.setPresence({ activities: [{ name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] }], status: 'online', type: "PLAYING" })
+        client.user.setPresence({ activities: [{ name: arrayOfStatus[Math.floor(Math.random() * arrayOfStatus.length)] }], status: 'online', type: "COMPETING" })
     }, 1000 * 60)
 })
 
@@ -89,7 +88,7 @@ client.on('ready', () => {
                 } else {
                     interaction.guild.channels.create(`🎫-${interaction.user.id}`, {
                         type: "GUILD_TEXT",
-                        //parent: "",
+                        //parent: "categoria",
                         permissionOverwrites: [
                             {
                                 id: interaction.guild.id,
@@ -124,10 +123,10 @@ client.on('ready', () => {
                     })
                 }
             } else if (interaction.customId === "tf") {
-                interaction.reply(`\\🔒 Olá ${interaction.user}, este ticket será fechado em \`15 segundos\`...`).then(() => {
+                interaction.reply(`\\🔒 ${interaction.user}, este ticket será fechado em \`15 segundos\`...`).then(() => {
                     setTimeout(() => {
                         interaction.channel.delete();
-                    }, 15000)
+                    }, 15000) //15 segundos
                 })
             }
         }
