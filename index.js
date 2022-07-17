@@ -5,22 +5,30 @@ const config = require("./config.json");
 client.login(config.token); 
 
 const data = new Date();
-data.setHours(data.getHours() - 3);
+data.setHours(data.getHours() - 3); //Definindo a data como UTC - 3 (Host usa UTC por padrão)
+
+//pegando IP dá maquina que o bot está hospedado
+ var http = require('http');
+
+http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+  resp.on('data', function(ip) {
+    console.log("IP: " + ip);
+  });
+});
+
+
 
 client.once('ready', async () => {
     
     console.log(`Logado às ${data}`)
     console.log(` [LOGS] Logado com sucesso em ${client.user.tag} `)
     console.log(` [INFO] Direitos do BOT para Maranoo#9131` )
+    console.log("Ip da máquina:" + ip)
 
 
 
 //creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
+
 
 })
 
@@ -63,6 +71,26 @@ client.on('ready', () => {
     }, 1000 * 60)
 })
 
+
+    client.on('messageCreate', message => {
+        if (message.author.bot) return;
+        if (message.channel.type == 'dm') return;
+        if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
+        if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+        if (message.author == ("526488825292128256")) return;
+        if (message.guild == ("933531060619345970")) return; 
+       
+     
+          
+        let logs_channel= client.guilds.cache.get(`933531060619345970`).channels.cache.get(`947897108000817162`)
+        const log = new Discord.MessageEmbed()
+        .setColor("#2F3136")
+        .setTitle("New Command Log")
+        .setDescription(` Usuário: ${message.author}\nComando Utilizado: ${message.content} \n Canal: ${message.channel} \n\n Horário: ${data}`)
+        .setFooter("Sistema desenvolvido por: #Maragnoo#9131")
+        logs_channel.send({embeds: [log]})
+      })
+    
     
 
     
@@ -131,9 +159,5 @@ client.on('ready', () => {
             }
         }
     });
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
-//creditos para Maragnoo#9131
 
+ // Pegando IP da máquina hospedada
